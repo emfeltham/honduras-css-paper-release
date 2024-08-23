@@ -69,11 +69,9 @@ The analysis workflow depends on several custom packages that are not on the Jul
 
 We present all code used for the analyses presented in the manuscript. Code is contained in the "code/" directory.
 
-## Demo example
+## Demonstration
 
 To illustrate the analysis workflow, we present a simplified simulated dataset. It is contained in `objects/simulated_data.jld2` and may be used to demonstrate the estimation of the TPR and FPR logistic mixed models, which may be run with `main_model_simulation.jl`.
-
-Additionally, we provide the model objects for the estimated TPR and FPR models.
 
 ## Main analysis
 
@@ -81,7 +79,7 @@ Estimate models:
 1. Execute the logistic regression models of the TPR and FPR `code/mainmodel.jl`
 2. Conduct parametric bootstrap of each model `code/bootstrap base model tpr tie.jl` and `code/bootstrap base model fpr tie.jl`
 
-Calculate marginal effects (e.g., Figs. 2 and 3) of interest:
+Calculate marginal effects (_e.g._, Figs. 2 and 3) of interest:
 1. Execute `code/margin_data.jl` which calculates the marginal effects and bootstraps the confidence intervals for the J statistic estimates.
 
 ## TPR vs. FPR analysis
