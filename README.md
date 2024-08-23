@@ -8,7 +8,9 @@ Additionally, this package contains a small simulated and simplified dataset to 
 
 ## Hardware Requirements
 
-This program has been tested on a standard computer, with sufficient RAM and processing power to support the size of the dataset analyzed by the user. This will be a computer with at least 16 GB, and 4 cores. Analysis and testing was carried out on a system running MAC OS 17.0, with 64 Gb RAM, and an intel i9 processor @ 2.30Ghz.
+Simplified analyses are expected to run on a typical computer, _e.g._, This will be a computer with at least 16 GB, and 4 cores. Analysis and testing was carried out on a system running MAC OS 17.0, with 64 Gb RAM, and an intel i9 processor @ 2.30Ghz.
+
+However, given the large dataset studied in the paper, analyses were executed on a cluster with 30 cores. The main mixed logistic regression models were executed over several hours, and the bootstrap calculations took less than a day to run.
 
 ## Software Requirements
 
