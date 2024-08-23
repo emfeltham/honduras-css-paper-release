@@ -71,7 +71,7 @@ We present all code used for the analyses presented in the manuscript. Code is c
 
 ## Demonstration
 
-To illustrate the analysis workflow, we present a simplified simulated dataset. It is contained in `objects/simulated_data.jld2` and may be used to demonstrate the estimation of the TPR and FPR logistic mixed models, which may be run with `main_model_simulation.jl`.
+To illustrate the analysis workflow, we present a simplified simulated dataset. It is contained in `objects/simulated_data.jld2` and may be used to demonstrate the estimation of the TPR and FPR logistic mixed models, which may be run with `main_model_simulation.jl`. The data is for illustrative purposes, and does not replicate the paper results.
 
 ## Main analysis
 
