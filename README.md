@@ -1,18 +1,18 @@
-# Humans possess systematically distorted cognitive representations of their social networks
+# Cognitive representations of social networks in isolated villages
 
-This repository contains the replication code for "Humans possess systematically distorted cognitive representations of their social networks".
+This repository contains the replication code for "Cognitive representations of social networks in isolated villages".
 
 Additionally, this package contains a small simulated and simplified dataset to demonstrate the analysis workflow for the paper results.
 
 # System Requirements
 
-## Hardware Requirements
+## Hardware
 
 Simplified analyses are expected to run on a typical computer, _e.g._, This will be a computer with at least 16 GB, and 4 cores. Analysis and testing was carried out on a system running MAC OS 17.0, with 64 Gb RAM, and an intel i9 processor @ 2.30Ghz.
 
 However, given the large dataset studied in the paper, analyses were executed on a cluster with 30 cores. The main mixed logistic regression models were executed over several hours, and the bootstrap calculations took less than a day to run.
 
-## Software Requirements
+## Software
 
 While analysis was executed on a MAC OSX system, all of the underlying dependencies are compatible with Windows, Mac, and Linux systems. This package has been tested on Julia 1.10.2.
 
@@ -53,7 +53,7 @@ Otherwise, consult the [Julia Language download page](https://julialang.org/down
 
 ### Package installation
 
-See "code/install.jl" to install the necessary Julia packages.
+See "code_replication/install.jl" to install the necessary Julia packages.
 
 From within a Julia session, type:
 
@@ -69,7 +69,11 @@ The analysis workflow depends on several custom packages that are not on the Jul
 
 ## Code
 
-We present all code used for the analyses presented in the manuscript. Code is contained in the "code/" directory.
+We present all code used for the analyses presented in the manuscript.
+
+- Main paper analyses is contained in the "code/" directory
+- The demonstration code is in "code_replication/"
+- See "code_figure/" and "code_table/" for code used to generate figures and tables
 
 ## Demonstration
 
@@ -78,17 +82,21 @@ To illustrate the analysis workflow, we present a simplified simulated dataset. 
 ## Main analysis
 
 Estimate models:
-1. Execute the logistic regression models of the TPR and FPR `code/mainmodel.jl`
-2. Conduct parametric bootstrap of each model `code/bootstrap base model tpr tie.jl` and `code/bootstrap base model fpr tie.jl`
+
+1. Execute the logistic regression models of the TPR and FPR `code_replication/mainmodel.jl`
+2. Conduct parametric bootstrap of each model `code_replication/bootstrap base model tpr tie.jl` and `code/bootstrap base model fpr tie.jl`
 
 Calculate marginal effects (_e.g._, Figs. 2 and 3) of interest:
-1. Execute `code/margin_data.jl` which calculates the marginal effects and bootstraps the confidence intervals for the J statistic estimates.
+
+1. Execute `code_replication/margin_data.jl` which calculates the marginal effects and bootstraps the confidence intervals for the J statistic estimates.
 
 ## TPR vs. FPR analysis
 
-1. Execute `code/stage_0.jl` to define the reference grids for the respondent-level estimates (the second stage models use individual-level accuracy estimates)
-2. Execute `code/rates_1.jl` and `code/rates_2.jl` to estimate second-stage regressions of TPR on FPR that adjust for uncertainty in the first-stage models.
-3. Execute `code/rates_assess.jl` to calculate the final adjusted estimates for the rates analysis.
+Execute
+
+1. `code_replication/stage_0.jl` to define the reference grids for the respondent-level estimates (the second stage models use individual-level accuracy estimates)
+2. `code_replication/rates_1.jl` and `code/rates_2.jl` to estimate second-stage regressions of TPR on FPR that adjust for uncertainty in the first-stage models.
+3. `code_replication/rates_assess.jl` to calculate the final adjusted estimates for the rates analysis.
 
 The riddle analysis proceeds analogously.
 
@@ -96,8 +104,8 @@ The riddle analysis proceeds analogously.
 
 This analysis depends on the riddle outcomes data in addition to the data required for the TPR vs. FPR analysis above.
 
-Additionally, instead of estimating the relationship between the two rates, we now estimate the probability of knowing the riddle separately for each accuracy metric (FPR, TPR, J)
+Additionally, instead of estimating the relationship between the two rates, we now estimate the probability of knowing the riddle separately for each accuracy metric (FPR, TPR, J), Execute
 
-1. Execute `code/stage_0.jl` to define the reference grids for the respondent-level estimates (the second stage models use individual-level accuracy estimates) (repeated from above)
-2. Execute `code/riddle_fpr.jl`, `code/riddle_tpr.jl`, `code/riddle_j.jl`
-3. Execute `code/riddle_assess.jl` to calculate the final adjusted estimates for the riddle analysis.
+1. `code_replication/stage_0.jl` to define the reference grids for the respondent-level estimates (the second stage models use individual-level accuracy estimates) (repeated from above)
+2. `code_replication/riddle_fpr.jl`, `code/riddle_tpr.jl`, `code/riddle_j.jl`
+3. `code_replication/riddle_assess.jl` to calculate the final adjusted estimates for the riddle analysis.
