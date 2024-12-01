@@ -8,10 +8,10 @@ Random.seed!(2024)
 
 rte = :fpr
 
-bimodel = load_object("objects/base1_tie_2.jld2")
+bimodel = load_object("interaction models/base1_tie_2.jld2")
 
 # via tpr_fpr_interaction_bimodel.jl
-rg = load_object("objects/tpr_fpr_boot_data_rg.jld2")
+rg = load_object("interaction models/tpr_fpr_boot_data_rg.jld2")
 
 K = 1_000
 L = 1_000
@@ -28,7 +28,7 @@ leftjoin!(rg, otc, on = :perceiver => :name)
 
 rx = deepcopy(rg)
 
-ŷs = load_object("objects/newstrap_stage1.jld2")
+ŷs = load_object("interaction models/newstrap_stage1.jld2")
 
 rgx = stack(rg, riddles; variable_name = :riddle, value_name = :knows);
 
@@ -41,7 +41,7 @@ rgx.ix = 1:nrow(rgx)
 
 dropmissing!(rgx, :knows)
 
-save_object("objects/riddle_data.jld2", rgx)
+save_object("interaction models/riddle_data.jld2", rgx)
 
 # transform to match rgx
 ŷst = (tpr = [e[rgx.ix] for e in ŷs.tpr], fpr = [e[rgx.ix] for e in ŷs.fpr])
@@ -80,4 +80,4 @@ ysim = [fill(NaN, nrow(rgx)) for _ in eachindex(1:K)]
 
 @time newstrap2!(τ, rgx, ŷst, mt, ysim, K, L, fitfunc, rte, fx_k, fx_l)
 
-save_object("objects/" * string(rte) *"_τ.jld2", τ)
+save_object("interaction models/" * string(rte) *"_τ.jld2", τ)

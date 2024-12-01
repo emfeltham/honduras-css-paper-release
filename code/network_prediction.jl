@@ -1,7 +1,17 @@
 # network_prediction.jl
+# cf. AN note on 2024-05-19
 
-include("../code/analysis_preamble.jl")
+include("../../code/setup/analysis preamble.jl")
 
+#%% data prep
+#=
+    replicates and copies some code from `make_data.jl`
+    we need to combine the actual network data with the model predictions for
+    the beliefs
+=#
+
+# the most recent version of this is not correctly loaded
+# in HondurasCSS or HondurasTools
 function DataFrame2(gr::T; type = :node) where T <:AbstractMetaGraph
     fl, prps, en, nu = if type == :node
         :node => Int[], gr.vprops, vertices, nv
@@ -61,12 +71,12 @@ function addfake!(gdf, g)
     end
 end
 
-ndf = JLD2.load_object(datapath * "network_info_" * dte * ".jld2");
-rhv4 = load_object(datapath * "rhv4_" * dte * ".jld2");
 
+ndf = JLD2.load_object(datapath * "network_info_" * dte * ".jld2");
 @subset!(ndf, :wave .== 4, :relation .∈ Ref(["free_time", "are_related"]));
 select!(ndf, :village_code, :names, :graph, :degree, :wave, :relation)
 
+rhv4 = load_object(datapath * "rhv4_" * dte * ".jld2");
 
 css_villes = sunique(cr.village_code)
 
@@ -364,7 +374,7 @@ dropmissing!(cr)
 
 #%%
 # model
-bimodel = load_object("objects/base1_tie_2.jld2")
+bimodel = load_object("interaction models/base1_tie_2.jld2")
 
 pdat = (tpr = cr[cr.socio4, :], fpr = cr[.!cr.socio4, :]);
 (nrow(pdat.tpr), nrow(pdat.fpr))
@@ -379,7 +389,7 @@ effects!(pdat.tpr, bimodel.tpr; invlink)
 effects!(pdat.fpr, bimodel.fpr; invlink)
 # save_object("interaction models/" * "net pred village 2 eff" * ".jld2", pdat)
 
-# pdat = load_object("interaction models/" * "net pred village 2 eff" * ".jld2")
+#pdat = load_object("interaction models/" * "net pred village 2 eff" * ".jld2")
 
 # collapse (alter1,alter2)-wise and consider presenting based on threshold
 
@@ -407,6 +417,10 @@ dropmissing!(gdf2)
 gdf2.sim = rand.(Bernoulli.(gdf2.response_bar))
 mg = MetaGraph(gdf2, :alter1, :alter2; edge_attributes = [:socio4, :kin431, :sim])
 
-save_object(
-    "objects/objects/net_plot_data_44.jld2", (graph = mg, edf = mg_edf, )
-)
+#save_object("honduras-css-paper/objects/net_plot_data_44.jld2", (graph = mg, edf = mg_edf, ))
+
+mge = DataFrame2(mg)
+rx = select(rhv4, [:name, :religion])
+leftjoin!(mge, rx, on = :name)
+
+countmap(mge.religion)

@@ -1,6 +1,9 @@
-# main_model.jl
+# base_models.jl
+# julia --threads=32 --project="." "honduras-css-paper/code/main_model.jl" > "output_main_model.txt"
 
-include("analysis_preamble.jl")
+@show pwd()
+
+include("../../code/setup/analysis preamble.jl")
 
 println("data loaded")
 
@@ -81,6 +84,26 @@ m1 = let dats = dats, fast = true
     )
 end
 
+# ms = [m1.tpr, m2.tpr, m1_i.tpr, m1.fpr, m2.fpr, m1_i.fpr];
+# regtablet(
+#     ms,
+#     "check_models";
+#     modeltitles = ["1 tpr", "2 tpr", "3 tpr", "1 fpr", "2 fpr", "3 fpr"]
+# )
+
 println("model finished")
 
-save_object("objects/main_model.jld2", m1);
+# save_object("interaction models/base1_tie_2.jld2", m1)
+save_object("interaction models/main_model.jld2", m1)
+
+# mainmodel = load_object("interaction models/main_model.jld2")
+
+# (nobs(mainmodel.tpr), nobs(mainmodel.fpr))
+
+# bimodel = load_object("interaction models/base1_tie_2.jld2")
+
+# (nobs(bimodel.tpr), nobs(bimodel.fpr))
+
+# sort(coefnames(bimodel.tpr)) == sort(coefnames(mainmodel.tpr))
+
+# hcat(sort(coefnames(bimodel.tpr)), sort(coefnames(mainmodel.tpr)))

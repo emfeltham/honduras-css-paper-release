@@ -1,12 +1,13 @@
 # tpr_fpr_2_assess.jl
 
-include("../code/environment.jl")
+include("../../code/setup/environment.jl")
 
 #%%
-invlink = AutoInvLink();
+invlink = AutoInvLink()
 
-rg = load_object("objects/tpr_fpr_boot_data_rg.jld2")
-τ = load_object("objects/tpr_fpr_τ.jld2")
+#%%
+# via tpr_fpr_interaction_bimodel.jl
+rg = load_object("interaction models/tpr_fpr_boot_data_rg.jld2")
 
 #%%
 
@@ -15,6 +16,8 @@ fx = @eval @formula(
 )
 
 m = fit(LinearModel, fx, rg)
+
+τ = load_object("interaction models/tpr_fpr_τ.jld2")
 
 vcmat = varcov([vec(r) for r in eachrow(reduce(hcat, τ))])
 
@@ -52,9 +55,9 @@ rgr = @chain rg begin
     combine([x => mean => x for x in [:tpr, :fpr, :j]]...)
 end
 
-save_object("objects/rates_data_2.jld2", [rgef, rgr])
+save_object("interaction models/rates_data_2.jld2", [rgef, rgr])
 
 # create adjusted coefficient table to pass into the regression table
 adj_cft = adjustedcoeftable(m, vcmat; overwrite = true)
 
-save_object("objects/rates_regtable_data.jld2", [m, adj_cft])
+save_object("rates_regtable_data.jld2", [m, adj_cft])

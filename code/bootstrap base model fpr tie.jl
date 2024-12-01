@@ -1,14 +1,15 @@
-# bootstrap interaction models fpr
+# bootstrap interaction models
+# julia --threads=32 --project="." "honduras-css-paper/code/bootstrap base model fpr tie.jl" > "output_m1_pb_fpr_tie_2.txt"
 
 using Random
 Random.seed!(2023)
 
-include("../code/environment.jl")
+include("../../code/setup/environment.jl")
 
 println("load model")
 
 m = load_object("interaction models/base1_tie_2.jld2")
 
-pbf = parametricbootstrap(10_000, m.fpr);
+pbf = parametricbootstrap(1_000, m.fpr);
 
-save_object("objects/base1_pb_10K_fpr_tie_2.jld2", pbf)
+save_object("interaction models/base1_pb_1K_fpr_tie_2.jld2", pbf)

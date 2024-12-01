@@ -1,13 +1,13 @@
 # riddle_2_assess.jl
 
-include("../code/environment.jl")
+include("../../code/setup/environment.jl")
 
 #%%
 invlink = AutoInvLink()
 
 #%%
 # via tpr_fpr_interaction_bimodel.jl
-rg = load_object("objects/tpr_fpr_boot_data_rg.jld2")
+rg = load_object("interaction models/tpr_fpr_boot_data_rg.jld2")
 
 otc = load_object(datapath * "outcomes_" * dte * ".jld2");
 select!(otc, Not(ids.vc, :wave))
@@ -32,9 +32,9 @@ bm = let tp = GeneralizedLinearModel
 end
 
 τs = (
-    tpr = load_object("objects/tpr_τ.jld2"),
-    fpr = load_object("objects/fpr_τ.jld2"),
-    j = load_object("objects/τ_j.jld2"),
+    tpr = load_object("interaction models/tpr_τ.jld2"),
+    fpr = load_object("interaction models/fpr_τ.jld2"),
+    j = load_object("interaction models/τ_j.jld2"),
 );
 
 vcmats = let
@@ -51,7 +51,7 @@ for r in [:tpr, :fpr, :j]
     push!(adj_cfts, ct)
 end
 
-save_object("objects/riddle_models.jld2", [bm, adj_cfts])
+save_object("interaction models/riddle_models.jld2", [bm, adj_cfts])
 
 #%%
 
@@ -105,7 +105,7 @@ end
 
 xf[!, "Pr(>|z|)"] = pvalue.(xf.knows, xf.err);
 
-save_object("objects/riddle_data.jld2", [rgs, xf])
+save_object("interaction models/riddle_data.jld2", [rgs, xf])
 
 ## riddle contrasts
 
@@ -155,6 +155,6 @@ end
 xf_riddle[!, "Pr(>|z|)"] = pvalue.(xf_riddle.knows, xf_riddle.err);
 
 save_object(
-    "objects/riddle_riddle_data.jld2",
+    "honduras-css-paper/objects/riddle_riddle_data.jld2",
     [rgs_riddle, xf_riddle]
 )

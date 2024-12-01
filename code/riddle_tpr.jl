@@ -9,7 +9,7 @@ Random.seed!(2024)
 rte = :tpr
 
 # via tpr_fpr_interaction_bimodel.jl
-rg = load_object("objects/tpr_fpr_boot_data_rg.jld2")
+rg = load_object("interaction models/tpr_fpr_boot_data_rg.jld2")
 
 otc = load_object(datapath * "outcomes_" * dte * ".jld2");
 select!(otc, Not(ids.vc, :wave))
@@ -27,7 +27,7 @@ L = 1_000
 
 ######
 
-ŷs = load_object("objects/newstrap_stage1.jld2")
+ŷs = load_object("interaction models/newstrap_stage1.jld2")
 
 # transform to match rgx
 ŷst = (tpr = [e[rgx.ix] for e in ŷs.tpr], fpr = [e[rgx.ix] for e in ŷs.fpr])
@@ -70,4 +70,4 @@ ysim = [fill(NaN, nrow(rgx)) for _ in eachindex(1:K)];
 
 # std.(eachrow(reduce(hcat, ysim)))
 
-save_object("objects/" * string(rte) *"_τ.jld2", τ)
+save_object("interaction models/" * string(rte) *"_τ.jld2", τ)

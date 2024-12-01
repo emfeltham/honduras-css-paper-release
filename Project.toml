@@ -1,6 +1,2 @@
 [deps]
-HondurasCSS = "86995ca9-cb84-4024-835f-b9ba116fef75"
-HondurasTools = "53a3418b-e4dc-4b79-9710-56922bb5ab08"
-MixedModels = "ff71e718-51f3-5ec2-a782-8ffcbfa3c316"
-NiceDisplay = "7d3b42f7-c40e-4233-afc8-58239d6810c5"
-Typst = "754b4cd3-ad0b-417a-aba2-7e4e052c0300"
+AbbreviatedStackTraces = "ac637c84-cc71-43bf-9c33-c1b4316be3d4"

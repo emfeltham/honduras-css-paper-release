@@ -1,8 +1,6 @@
 # stage_0.jl
 # boot data
 
-include("../code/environment.jl")
-
 #%%
 bimodel = load_object("interaction models/base1_tie_2.jld2");
 
@@ -52,6 +50,6 @@ rgx = referencegridunit(dat, variables, ed)
 estimaterates!(rgx, bimodel; iters = 20_000)
 ci_rates!(rgx)
 
-save_object("interaction models/tpr_fpr_boot_data_rg.jld2", rgx)
+# save_object("interaction models/tpr_fpr_boot_data_rg.jld2", rgx)
 
 save_object("interaction models/riddle_boot_data_rg.jld2", rgx)
