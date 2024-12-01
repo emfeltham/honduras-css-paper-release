@@ -86,7 +86,7 @@ Estimate models:
 1. Execute the logistic regression models of the TPR and FPR `code_replication/mainmodel.jl`
 2. Conduct parametric bootstrap of each model `code_replication/bootstrap base model tpr tie.jl` and `code/bootstrap base model fpr tie.jl`
 
-Calculate marginal effects (_e.g._, Figs. 2 and 3) of interest:
+Calculate marginal effects (_e.g._, Fig. 3) of interest:
 
 1. Execute `code_replication/margin_data.jl` which calculates the marginal effects and bootstraps the confidence intervals for the J statistic estimates.
 
