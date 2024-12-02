@@ -91,4 +91,4 @@ out = ["#import \"@preview/tablex:0.0.8\": tablex, cellx, gridx\n",
   "\n    caption: " * string(caption) * "\n) <roster> \n"
 ]
 out = reduce(*, out);
-textexport("model_variables/figures_si/SI Figure roster", out; ext = ".typ");
+textexport("model_variables/Figures (SI)/SI Figure roster", out; ext = ".typ");

@@ -123,7 +123,7 @@ let fg = fg
 	caption = "Recognition by distance. Survey respondents recognize individuals in displayed candidate pairs above 90% across every distance to the respondent, including those far away in the network, at more than 10 degrees of separation. Error bars represent 95% confidence intervals."
 
 	figure_export(
-		"honduras-css-paper/figures_si/SI Figure alter recognition.svg",
+		"honduras-css-paper/Figures (SI)/SI Figure alter recognition.svg",
 		fg,
 		save2;
 		caption,

@@ -44,7 +44,7 @@ let fg = fg
 	caption = "Village level accuracy, _free time_. *(a)* Bivariate distribution of social network accuracy at the village level. We see that the villages-level averages exhibit a positive correlation between type 1 and type 2 error rates. *(b)* univariate distribution of the \$J\$ statistic. In general, villages fall into a relatively narrow range, implying that most of the variation stems from individuals rather than whole village populations. Village-level predictions represent model-adjusted averages at the respondent-level, for judgements of non-kin ties."
 
 	figure_export(
-		"honduras-css-paper/figures_si/village_dist.svg",
+		"honduras-css-paper/Figures (SI)/village_dist.svg",
 		fg,
 		save2;
 		caption,

@@ -52,7 +52,7 @@ resize_to_layout!(fg3)
 let
     caption = "Effect of the interaction between cognizer and pair wealth on accuracy. *(a)* Interaction for the TPR and FPR rates in three dimensions. *(b)* Interaction between cognizer and pair wealth on the J statistic. Effects represent marginal effects calculated from the mixed-effects logistic models of the TPR and FPR."
     figure_export(
-        "honduras-css-paper/figures_si/SI Figure wealth interaction.svg",
+        "honduras-css-paper/Figures (SI)/SI Figure wealth interaction.svg",
         fg3,
         save2;
         short_caption = "Effect of the interaction between cognizer and pair wealth on accuracy.",

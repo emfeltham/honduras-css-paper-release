@@ -68,7 +68,7 @@ let fg = fg_pred
 	caption = "Binned residual plots of the primary models of the *(a)* TPR and *(b)* FPR. Lines represent the ± 2 standard error bounds. The model predictions are divided into 500 bins, with equal counts of observations. The average residual values of each bin are plotted against the average model prediction from each corresponding bin."
 
 	figure_export(
-		"honduras-css-paper/figures_si/residuals.svg",
+		"honduras-css-paper/Figures (SI)/residuals.svg",
 		fg,
 		Makie.save;
 		caption,

@@ -1,7 +1,7 @@
 # individual predictions figures.jl
 
 obj_dir = "honduras-css-paper/objects/";
-fig_dir = "honduras-css-paper/figures_si/";
+fig_dir = "honduras-css-paper/Figures (SI)/";
 
 fns = ["base", "interaction_1", "interaction_2"];
 # [load_object(fn * "_individual.jld2") for fn in fns]

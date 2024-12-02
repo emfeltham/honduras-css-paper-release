@@ -58,7 +58,7 @@ let fg = fg
 	caption = "Riddle estimates. In Fig. 5b, we estimate the relationship between knowledge of exogenously introduced health information and social network accuracy. We present the riddle knowledge effect estimates for each riddle, from the three separate models (for each accuracy metric), from the average accuracy value in the population of survey respondents. The estimates for each riddle are relatively similar. Bars represent 95% confidence intervals, bootstrapped to incorporate uncertainty at both stages of estimation."
 
 	figure_export(
-		"honduras-css-paper/figures_si/SI Figure riddle estimates.svg",
+		"honduras-css-paper/Figures (SI)/SI Figure riddle estimates.svg",
 		fg,
 		save2;
 		caption,

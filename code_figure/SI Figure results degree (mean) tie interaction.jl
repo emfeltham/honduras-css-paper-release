@@ -72,12 +72,12 @@ labelpanels!(los)
 fg
 
 #%%
-save("honduras-css-paper/figures_si/SI Figure results degree (mean) tie interaction.png", fg; px_per_unit = 2)
+save("honduras-css-paper/Figures (SI)/SI Figure results degree (mean) tie interaction.png", fg; px_per_unit = 2)
 
 let
     scaption = "Effect of the interaction between a cognizer's degree and the average degree of a pair on accuracy."
     figure_export(
-        "honduras-css-paper/figures_si/SI Figure results degree (mean) tie interaction.svg",
+        "honduras-css-paper/Figures (SI)/SI Figure results degree (mean) tie interaction.svg",
         fg,
         save2;
         short_caption = scaption,

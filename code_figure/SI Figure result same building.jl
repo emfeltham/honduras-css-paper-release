@@ -64,7 +64,7 @@ let fg = fg
 	caption = "Effect of the pair living in the same building on accuracy with respect to accuracy in network cognition. LHS: Grey bands that surround the effect estimates represent bootstrapped 95% confidence ellipses. RHS: Bands represent 95% confidence intervals (see Methods for details)."
 
 	figure_export(
-		"honduras-css-paper/figures_si/SI Figure result same building.svg",
+		"honduras-css-paper/Figures (SI)/SI Figure result same building.svg",
 		fg,
 		save2;
 		caption,

@@ -43,7 +43,7 @@ let fg = fg
 	caption = "Normality of the estimated coefficients for the TPR model. We see that the bootstrap distribution of each estimated coefficient appears closely normal via quantile-quantile comparisons."
 
 	figure_export(
-		"honduras-css-paper/figures_si/qq_tpr_coefs.png",
+		"honduras-css-paper/Figures (SI)/qq_tpr_coefs.png",
 		fg,
 		save;
 		caption,
@@ -80,7 +80,7 @@ let fg = fg
 	caption = "Normality of the estimated coefficients for the FPR model. We see that the bootstrap distribution of each estimated coefficient appears closely normal via quantile-quantile comparisons."
 
 	figure_export(
-		"honduras-css-paper/figures_si/qq_fpr_coefs.png",
+		"honduras-css-paper/Figures (SI)/qq_fpr_coefs.png",
 		fg,
 		save;
 		caption,

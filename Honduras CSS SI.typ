@@ -8,7 +8,7 @@
 #let fgdir = "figures/"
 #let tdir = "tables/"
 
-#let sfgdir = "figures_si/"
+#let sfgdir = "Figures (SI)/"
 #let stdir = "tables_si/"
 
 // outlines

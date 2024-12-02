@@ -94,7 +94,7 @@ let fg = fg4
 	caption = "Additional individual determinants of respondent accuracy. In each panel, the lefthand image shows the marginal effect on accuracy in ROC-space (grey shading represents the 95% bootstrapped confidence ellipse of the predictions from the two models), and the righthand image shows the marginal effect of each individual accuracy measure: the true positive rate, false positive rate, and the overall summary measure of accuracy (Youden’s \$J\$). Intervals represent 95% confidence levels, calculated via normal approximation for the two rates, and bootstrapped for the \$J\$ statistic. Religion and indigenous status are shown."
 
 	figure_export(
-		"honduras-css-paper/figures_si/figure3_si_s.svg",
+		"honduras-css-paper/Figures (SI)/figure3_si_s.svg",
 		fg,
 		save2;
         short_caption = "Additional individual determinants of respondent accuracy.",

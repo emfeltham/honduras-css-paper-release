@@ -73,7 +73,7 @@ let fg = fg
 	caption = "(a) Effect of village size above or below Dunbar's number with respect to accuracy in network cognition. LHS: Grey bands that surround the effect estimates represent bootstrapped 95% confidence ellipses. RHS: Bands represent 95% confidence intervals (see Methods for details). (b) Distribution of village sizes, with Dunbar's number (150) (yellow line) and average size (black line)."
 
 	figure_export(
-		"honduras-css-paper/figures_si/SI Figure results dunbar.svg",
+		"honduras-css-paper/Figures (SI)/SI Figure results dunbar.svg",
 		fg,
 		save2;
 		caption,

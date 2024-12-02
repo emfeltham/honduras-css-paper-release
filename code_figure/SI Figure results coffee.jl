@@ -57,7 +57,7 @@ fg
 
 #%%
 
-save("honduras-css-paper/figures_si/SI Figure results coffee.png", fg)
+save("honduras-css-paper/Figures (SI)/SI Figure results coffee.png", fg)
 
 #%%
 # captions
@@ -66,7 +66,7 @@ let fg = fg
     caption = "Effect of whether a village cultivates coffee on social network accuracy. Parameters are fit from separate models of each rate, conditional on tie verity in the reference network. Grey shading represents the 95% bootstrapped confidence ellipse of the predictions from the two models. Right, marginal effect of each individual accuracy measure: the true positive and false positive rates and the summary measure Youden's \$J\$ statistic. Intervals represent 95% confidence levels, calculated via normal approximation for the two rates, and bootstrapped for the \$J\$ statistic."
 
     figure_export(
-        "honduras-css-paper/figures_si/SI Figure results coffee.svg",
+        "honduras-css-paper/Figures (SI)/SI Figure results coffee.svg",
         fg,
         save2;
         caption,

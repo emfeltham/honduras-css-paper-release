@@ -157,7 +157,7 @@ let fg = fg1
 	caption = "Distribution of geodesic distances. The yellow regions represent the 20th and 80th percentiles of the distribution around the mean geodesic distance (black line). Distances in the the underlying (a) _free time_ (green) and (b) _personal private_ (fuchsia) networks. (c) Distances from the cognizer to the alter in the pairs presented to respondents. (d) Distances between the individuals in the pairs presented to the respondents, when the ground truth tie does not exist."
 
 	figure_export(
-		"honduras-css-paper/figures_si/SI Figure distribution distances.svg",
+		"honduras-css-paper/Figures (SI)/SI Figure distribution distances.svg",
 		fg,
 		save2;
 		caption,
@@ -204,7 +204,7 @@ let fg = fgcdf
 	caption = "Empirical CDFs of cognizer-tie distance for (a) _free time_ and (b) _personal private_ relationships. We observe that 12.3% of _free time_ and 8.0% of _personal private_ ties presented are 8 degrees or more (dotted line) away from the survey respondents."
 
 	figure_export(
-		"honduras-css-paper/figures_si/SI Figure distances cdf.svg",
+		"honduras-css-paper/Figures (SI)/SI Figure distances cdf.svg",
 		fg,
 		save2;
 		caption,

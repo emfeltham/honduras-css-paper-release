@@ -35,7 +35,7 @@ let fg = fgl
 	caption = "Reported kinship and genetic kinship. Distribution of the kinship coefficient (see Methods for description) for the self-reported Parent/child relationships and the sibling relationships. Distribution means (blue lines) indicate that the levels of relatedness are close to their expected values (\$1/4\$ for each) for both categories."
 
 	figure_export(
-		"honduras-css-paper/figures_si/report_genetics.svg",
+		"honduras-css-paper/Figures (SI)/report_genetics.svg",
 		fg,
 		save2;
 		caption,
