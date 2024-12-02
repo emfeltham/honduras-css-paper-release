@@ -2,6 +2,7 @@
 # run locally
 
 include("../../code/setup/environment.jl");
+saveloc = "honduras-css-paper/Tables (extended data)/"
 
 pdigits = 5;
 
@@ -141,7 +142,7 @@ dout_r.Variable[1] = dout_r.Variable[1] * " \\ " * "#text(fill: lbg)[95% CI]" * 
 tbx = tablex(dout_r; superheader, scientificnotation = true, rounddigits = pdigits);
 
 table_export(
-    "honduras-css-paper/tables/ED Table contrasts respondent",
+    saveloc * "ED Table contrasts respondent",
     tbx;
     extra,
     placement = :auto,
@@ -162,7 +163,7 @@ dout_t.Variable[1] = dout_t.Variable[1] * " \\ " * "#text(fill: lbg)[95% CI]" * 
 tbx = tablex(dout_t; superheader, scientificnotation = true, rounddigits = pdigits);
 
 table_export(
-    "honduras-css-paper/tables/ED Table contrasts tie",
+    saveloc * "ED Table contrasts tie",
     tbx;
     extra,
     placement = :auto,

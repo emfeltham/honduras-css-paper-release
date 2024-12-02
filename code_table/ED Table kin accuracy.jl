@@ -1,5 +1,6 @@
 # ED Table kin accuracy.jl
 
+saveloc = "honduras-css-paper/Tables (extended data)/"
 css_path = "CSS/final_data/v1/css_edges_v1.csv";
 basepath = "../";
 css = CSV.read(basepath * css_path, DataFrame; missingstring = "NA");
@@ -155,7 +156,7 @@ push!(cells, hlinex(; start_ = 1))
 tbx = tablex(cells)
 
 table_export(
-    "honduras-css-paper/tables/ED Table kin accuracy",
+    saveloc * "Tables (extended data)/ED Table kin accuracy",
     tbx;
     short_caption = "Accuracy for kin ties",
     caption = "Survey respondents are remarkably accurate in their knowledge of the kinship relations in their networks. Rows indicate the response to survey question 6, where respondents indicate the type of kin relationship (if any) that holds between a presented pair. Columns indicate the status in the underlying sociocentric network. We see that correct identifications are made around 96.66% of the time, on average across the categories.",

@@ -4,7 +4,6 @@
 
 include("../../code/setup/environment.jl");
 
-
 md = load_object("objects/base1_tie2_margins_bs_out.jld2")
 transforms = load_object("objects/variable_transforms.jld2")
 wd = load_object("objects/wealth_interaction.jld2");
