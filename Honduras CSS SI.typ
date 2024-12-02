@@ -2,7 +2,7 @@
 
 #let tblsz = 10pt
 
-#import "template_si.typ": *
+#import "Honduras CSS SI template.typ": *
 #show: project.with()
 
 #let fgdir = "figures/"

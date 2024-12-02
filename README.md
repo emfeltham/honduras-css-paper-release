@@ -1,6 +1,6 @@
 # Cognitive representations of social networks in isolated villages
 
-This repository contains the replication code for "Cognitive representations of social networks in isolated villages".
+This repository contains the demonstration code for "Cognitive representations of social networks in isolated villages".
 
 Additionally, this package contains a small simulated and simplified dataset to demonstrate the analysis workflow for the paper results.
 
@@ -71,8 +71,8 @@ The analysis workflow depends on several custom packages that are not on the Jul
 
 We present all code used for the analyses presented in the manuscript.
 
-- Main paper analyses is contained in the "code/" directory
-- The demonstration code is in "code_replication/"
+- Main paper analyses are contained in the "code/" directory
+- The demonstration code is in "code_demonstration/"
 - See "code_figure/" and "code_table/" for code used to generate figures and tables
 
 ## Demonstration
@@ -83,20 +83,20 @@ To illustrate the analysis workflow, we present a simplified simulated dataset. 
 
 Estimate models:
 
-1. Execute the logistic regression models of the TPR and FPR `code_replication/mainmodel.jl`
-2. Conduct parametric bootstrap of each model `code_replication/bootstrap base model tpr tie.jl` and `code/bootstrap base model fpr tie.jl`
+1. Execute the logistic regression models of the TPR and FPR `code_demonstration/mainmodel.jl`
+2. Conduct parametric bootstrap of each model `code_demonstration/bootstrap base model tpr tie.jl` and `code/bootstrap base model fpr tie.jl`
 
 Calculate marginal effects (_e.g._, Fig. 3) of interest:
 
-1. Execute `code_replication/margin_data.jl` which calculates the marginal effects and bootstraps the confidence intervals for the J statistic estimates.
+1. Execute `code_demonstration/margin_data.jl` which calculates the marginal effects and bootstraps the confidence intervals for the J statistic estimates.
 
 ## TPR vs. FPR analysis
 
 Execute
 
-1. `code_replication/stage_0.jl` to define the reference grids for the respondent-level estimates (the second stage models use individual-level accuracy estimates)
-2. `code_replication/rates_1.jl` and `code/rates_2.jl` to estimate second-stage regressions of TPR on FPR that adjust for uncertainty in the first-stage models.
-3. `code_replication/rates_assess.jl` to calculate the final adjusted estimates for the rates analysis.
+1. `code_demonstration/stage_0.jl` to define the reference grids for the respondent-level estimates (the second stage models use individual-level accuracy estimates)
+2. `code_demonstration/rates_1.jl` and `code/rates_2.jl` to estimate second-stage regressions of TPR on FPR that adjust for uncertainty in the first-stage models.
+3. `code_demonstration/rates_assess.jl` to calculate the final adjusted estimates for the rates analysis.
 
 The riddle analysis proceeds analogously.
 
@@ -106,6 +106,6 @@ This analysis depends on the riddle outcomes data in addition to the data requir
 
 Additionally, instead of estimating the relationship between the two rates, we now estimate the probability of knowing the riddle separately for each accuracy metric (FPR, TPR, J), Execute
 
-1. `code_replication/stage_0.jl` to define the reference grids for the respondent-level estimates (the second stage models use individual-level accuracy estimates) (repeated from above)
-2. `code_replication/riddle_fpr.jl`, `code/riddle_tpr.jl`, `code/riddle_j.jl`
-3. `code_replication/riddle_assess.jl` to calculate the final adjusted estimates for the riddle analysis.
+1. `code_demonstration/stage_0.jl` to define the reference grids for the respondent-level estimates (the second stage models use individual-level accuracy estimates) (repeated from above)
+2. `code_demonstration/riddle_fpr.jl`, `code/riddle_tpr.jl`, `code/riddle_j.jl`
+3. `code_demonstration/riddle_assess.jl` to calculate the final adjusted estimates for the riddle analysis.
